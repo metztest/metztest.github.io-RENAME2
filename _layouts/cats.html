@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <style>
+      ul {
+        list-style-image: url('assets/catbullet.png');
+      }
+    </style>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h2>{{ content }}</h2>
+
+        <ul>
+        {% for cat in site.cats %}
+          <h3>
+            <li><a href="{{ cat.url | relative_url }}">
+              {{ cat.name }}
+            </a></li>
+          </h3>
+
+        {% endfor %}
+        </ul>
+
+
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>
