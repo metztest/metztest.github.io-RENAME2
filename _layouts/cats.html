@@ -24,6 +24,9 @@
               {{ cat.name }}
             </a></li>
           </h3>
+          {%- if site.show_excerpts -%}
+            {{ cat.excerpt }}
+          {%- endif -%}
 
         {% endfor %}
         </ul>
