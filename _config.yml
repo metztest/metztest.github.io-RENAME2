@@ -15,3 +15,9 @@ plugins:
 collections:
   cats:
     output: true
+    order:
+      - jabba-the-fluff.md
+      - harvey.md
+      - grumpy-cat.md
+      - nala-cat.md
+      - princess-monster-truck.md
