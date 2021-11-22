@@ -1,0 +1,19 @@
+name: Build and deploy Jekyll site to GitHub Pages
+
+
+# Run this workflow every time there is a push to `main`
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest # Specify runner to use
+    steps:
+      - uses: actions/checkout@v2 # Check out our repo so our workflow can access it
+      - uses: helaili/jekyll-action@v2 # Run a Jekyll build, push built files back to repo
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }} # Token required write to our repo
+          target_branch: 'gh-pages' # Built files should be pushed 
